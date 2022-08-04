@@ -2,11 +2,12 @@ import Record from "../models/recordModel.js";
 
 export const createRecord = (req, res) => {
     //console.log(req.body);
-    const { username,description } = req.body;
+    const { username,description,imgCollection } = req.body;
 
     const newRecord = new Record({
         username,
         description,
+        imgCollection,
     }).save()
         .then(() => res.status(201).json({success: true, msg: 'Record created successfully'}))
         .catch((err) => res.status(400).json(`error: ${err}`));
@@ -31,6 +32,7 @@ export const updateRecord = (req, res) => {
         .then((record) => {
             record.username = req.body.username;
             record.description = req.body.description;
+            record.imgCollection = req.body.imgCollection;
 
             record
             .save()

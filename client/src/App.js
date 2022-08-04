@@ -5,6 +5,7 @@ import RecordList from "./components/RecordList";
 import EditRecord from "./components/EditRecord";
 import CreateRecord from "./components/CreateRecord";
 import Home from "./components/Home";
+import "./App.css"
 
 
 function App() {

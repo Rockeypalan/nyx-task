@@ -9,6 +9,7 @@ const Record = ({record, deleteRecord, key }) => {
           <tr>
             <td> {record.username}</td>
             <td> {record.description}</td>
+            <td> <img className="img" src={record.imgCollection}></img></td>
             <td>
                 <Link to = {`/${record._id}`}> <i class="bi bi-pencil-square" /> </Link> | <a href="#" onClick={() => {
                     deleteRecord(record._id);

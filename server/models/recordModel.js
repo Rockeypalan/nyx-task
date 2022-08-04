@@ -10,6 +10,9 @@ const recordSchema = mongoose.Schema(
     description:{
         type: String,
         required: true
+    },
+    imgCollection: {
+        type: Array
     }
 },
     {

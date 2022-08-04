@@ -12,6 +12,7 @@ const EditUser = () => {
   const [record, setRecord] = useState({
         username:'',
         description:'',
+        imgCollection: "",
         
   });
 
@@ -24,6 +25,7 @@ const EditUser = () => {
             ...prevPost,
             username: res.data.record.username,
             description: res.data.record.description,
+            imgCollection: res.data.record.imgCollection,
             
           };
         });
@@ -51,6 +53,7 @@ const EditUser = () => {
     const newRecord = {
         username: record.username,
         description: record.description,
+        imgCollection: record.imgCollection,
         
     };
 
@@ -74,11 +77,15 @@ const EditUser = () => {
                 <div className='form-group col-md-4'>
                     <label>Username</label>
                     <input required type='text' value={record.username} onChange={handleChange} className='form-control' name='username'></input>
-                </div>
+                </div><br />
                 <div className='form-group col-md-4'>
                     <label>Description</label>
                     <input required type='text' value={record.description} onChange={handleChange} className='form-control' name='description'></input>
-                </div>
+                </div><br />
+                <div className="form-group">
+                <lable> Image </lable>
+                <input type="text" value={record.imgCollection} onChange={handleChange} name="imgCollection" className="form-control" multiple />
+                 </div>
                 
                 <br />
                 <div>

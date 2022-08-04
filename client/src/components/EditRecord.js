@@ -82,10 +82,14 @@ const EditUser = () => {
                     <label>Description</label>
                     <input required type='text' value={record.description} onChange={handleChange} className='form-control' name='description'></input>
                 </div><br />
-                <div className="form-group">
-                <lable> Image </lable>
+                <div className="form-group" >
+                <lable> Convert your Image to Link  </lable>
+                <a type="button" href="https://postimages.org/" target="_blank" class="btn btn-outline-warning"><i class="bi bi-person-badge"></i> Convert </a>
+            </div><br />
+            <div className="form-group">
+                <lable>  Image Direct Link  </lable>
                 <input type="text" value={record.imgCollection} onChange={handleChange} name="imgCollection" className="form-control" multiple />
-                 </div>
+            </div><br />
                 
                 <br />
                 <div>

@@ -5,7 +5,7 @@ import Record from "./Record";
 
 function RecordList() {
   const [records, setRecords] = useState([]);
-  console.log(records);
+  // console.log(records);
 
   useEffect(() => {
       axios.get("http://localhost:5000/records")
@@ -16,9 +16,15 @@ function RecordList() {
     const deleteRecord = (id) => {
       setRecords(records.filter((record) => record._id !== id));
       axios.delete(`http://localhost:5000/records:${id}`)
+            
             .then((res) => console.log(res.data))
             .catch((err) => console.log(err));
     };
+    // const deleteRecord = async id => {
+    //   setRecords(records.filter((record) => record._id !== id));
+    //   await axios.delete(`http://localhost:5000/records:${id}`);
+      
+    // };
 
     return (
       

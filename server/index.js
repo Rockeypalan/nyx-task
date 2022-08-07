@@ -2,7 +2,7 @@ import express  from "express";
 import dotenv from "dotenv";
 import mongoose  from "mongoose";
 import cors from "cors";
-import recordsRoute from "./routes/recordRouters.js"
+import records from "./routes/recordRouters.js"
 
 dotenv.config();
 const app = express();
@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 const CONNECTION_URI = process.env.CONNECTION_URI;
 
 //http://localhost:5000/records -CRUD
-app.use( '/records', recordsRoute);
+app.use( '/records', records);
 
 app.get('/', (req,res) => {
     res.status(200).json({success: true, msg: "Hello, Welcome..."});
